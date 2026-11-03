@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="page" x-data="todoApp()" :class="{ dark: darkMode, dyslexie: dyslexie }">
+
+        <div class="app">
+
+            <h1>Ma liste de tâches</h1>
+            
+            <h2>Options</h2>
+            <div class="preferences">
+
+                <button @click="changerTheme()">
+                    <span x-text="darkMode ? 'Mode clair' : 'Mode sombre'"></span>
+                </button>
+                <button @click="changerLecture()">Mode accessible</button>
+
+            </div>
+
+            <h2>Ajouter une tâche</h2>
+
+            <form @submit.prevent="ajouterTache()">
+
+                <input type="text" placeholder="Nouvelle tâche..." x-model="nouvelleTache">
+                <button type="submit">Ajouter</button>
+
+            </form>
+
+            <h2>Statistiques</h2>
+            <p>Total : <strong x-text="total()"></strong></p>
+            <p>Terminées : <strong x-text="terminees()"></strong></p>
+            <p>Restantes : <strong x-text="restantes()"></strong></p>
+
+            <h2>Mes tâches</h2>
+            <p x-show="taches.length === 0" x-cloak>Aucune tâche pour le moment.</p>
+
+            <ul>
+
+                <template x-for="tache in taches" :key="tache.id">
+                    <li>
+                        <input type="checkbox" x-model="tache.terminee" @change="sauvegarderTaches()">
+                        <span :class="{ barre: tache.terminee }" x-text="tache.texte"></span>
+                        <button class="supprimer" @click="supprimerTache(tache.id)">Supprimer</button>
+                    </li>
+                </template>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

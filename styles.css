@@ -1,0 +1,127 @@
+[x-cloak] {
+    display: none !important;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.page {
+    min-height: 100vh;
+    padding: 20px;
+    color: #222;
+}
+
+
+.app {
+    max-width: 800px;
+    padding: 30px;
+}
+
+
+.preferences button {
+    margin-right: 10px;
+}
+
+
+button {
+    padding: 10px 16px;
+    font-size: 1rem;
+    background: #e8e8ee;
+    border: 1px solid #999;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+li input {
+    margin-right: 10px;
+}
+
+
+.barre {
+    text-decoration: line-through;
+    color: #888;
+}
+
+
+.supprimer {
+    margin-left: 15px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+}
+
+
+.dark {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+
+
+.dark button {
+    background: #333;
+    color: #f5f5f5;
+    border-color: #666;
+}
+
+
+.dark input[type="text"] {
+    background: #2a2a2a;
+    color: #f5f5f5;
+    border-color: #666;
+}
+
+
+.dark li {
+    border-bottom-color: #444;
+}
+
+
+.dark .barre {
+    color: #999;
+}
+
+
+.dyslexie {
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    word-spacing: 0.12em;
+}
+
+
+.dyslexie p,
+.dyslexie li {
+    max-width: 70ch;
+    font-size: 1.08rem;
+}
+
+
+.dyslexie button,
+.dyslexie input {
+    letter-spacing: 0.05em;
+    word-spacing: 0.12em;
+}
